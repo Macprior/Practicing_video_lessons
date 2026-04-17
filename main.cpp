@@ -158,6 +158,139 @@ int math(){
     return 0;
 }
 
+int ifStatements() {
+
+    // if condition is true, do the action
+
+    int age;
+
+    std::cout << "Enter your age: " << '\n';
+    std::cin >> age;
+
+    if (age >= 18 && age < 100) {
+        std::cout << "Your are old enough to enter the site!" << std::endl;
+    }
+    else if (age <= 0) {
+        std::cout << "You are not born yet!" << std::endl;
+    }
+    else if (age >= 100) {
+        std::cout << "You are too old for this site!" << std::endl;
+    }
+    else {
+        std::cout << "Your are not old enough to enter the site!" << std::endl;
+    }
+
+    return 0;
+}
+
+int switches() {
+
+    int month;
+    std::cout << "Enter your month: " << '\n';
+    std::cin >> month;
+
+    // an alternative for multiple else if statements to make it easier to read and cleaner
+    switch (month) {
+        case 1:
+            std::cout << "It is January" << '\n';
+            break;
+        case 2:
+            std::cout << "It is February" << '\n';
+            break;
+        case 3:
+            std::cout << "It is March" << '\n';
+            break;
+        case 4:
+            std::cout << "It is April" << '\n';
+            break;
+        case 5:
+            std::cout << "It is May" << '\n';
+            break;
+        case 6:
+            std::cout << "It is June" << '\n';
+            break;
+        case 7:
+            std::cout << "It is July" << '\n';
+            break;
+        case 8:
+            std::cout << "It is August" << '\n';
+            break;
+        case 9:
+            std::cout << "It is September" << '\n';
+            break;
+        case 10:
+            std::cout << "It is October" << '\n';
+            break;
+        case 11:
+            std::cout << "It is November" << '\n';
+            break;
+        case 12:
+            std::cout << "It is December" << '\n';
+            break;
+        default:
+            std::cout << "It is not a valid month!" << std::endl;
+    }
+    return 0;
+}
+
+int calculator() {
+
+    char op;
+    double num1;
+    double num2;
+    double result;
+
+    std::cout << "What operation?" << std::endl;
+    std::cin >> op;
+
+    std::cout << "Number 1?" << std::endl;
+    std::cin >> num1;
+
+    std::cout << "Number 2?" << std::endl;
+    std::cin >> num2;
+
+    switch (op) {
+        case '+':
+            result = num1 + num2;
+            break;
+        case '-':
+            result = num1 - num2;
+            break;
+        case '*':
+            result = num1 * num2;
+            break;
+        case '/':
+            result = num1 / num2;
+            break;
+        default:
+            std::cout << "It is not a valid operation!" << std::endl;
+            result = static_cast<int>(0);
+            break;
+
+    }
+    return result;
+}
+
+int ternary() {
+
+    // replaces if/else statement with ?:
+
+    int grade;
+
+    std::cout << "What grade?" << std::endl;
+    std::cin >> grade;
+
+    grade >= 60 ? std::cout << "You pass!\n" : std::cout << "You fail\n";
+
+    int number;
+    std::cout << "What number?" << std::endl;
+    std::cin >> number;
+
+    number % 2 == 1 ? std::cout << "ODD" : std::cout << "EVEN";
+
+    return 0;
+}
+
 int main() {
-    std::cout << math() << '\n';
+    std::cout << ternary() << '\n';
 }
